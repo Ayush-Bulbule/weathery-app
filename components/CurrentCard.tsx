@@ -10,12 +10,18 @@ interface IWeather {
     name: string;
     main: {
         temp: number;
+        feels_like: number;
+        pressure:number;
+        humidity:number;
     }
     weather: [{
         main: string;
         description: string;
         icon: string;
     }]
+    wind:{
+        speed:number;
+    }
 }
 
 const weatherConditions: Record<string, string> = {
@@ -104,7 +110,7 @@ const CurrentCard = () => {
                 </div>
             </div>
 
-           {weather? <DetailCard data={weather}/>:""}
+           {weather? <DetailCard feel={weather.main.feels_like} humidity={weather.main.humidity} pressure={weather.main.pressure} speed={weather.wind.speed}/>:""}
 
 
         </>
