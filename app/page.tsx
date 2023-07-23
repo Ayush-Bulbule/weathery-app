@@ -10,21 +10,25 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="h-screen w-screen flex ">
-      <Sidebar />
+    <div className="md:min-h-screen relative overflow-x-hidden flex box-border">
+      <Sidebar/>
       {/* Main */}
-      <CityProvider>
-        <div className="w-4/6 py-4">
-          <Search />
-          <CurrentCard />
-          {/*  */}
-          <TodayCard />
-          {/* Box Detail */}
-          <DetailCard />
-        </div>
-        {/* right side  */}
-        <WeekCard />
-      </CityProvider>
+      <div className="w-full flex flex-col md:flex-row">
+
+        <CityProvider>
+          <div className="md:w-4/6 w-full p-4">
+            <Search />
+            <CurrentCard />
+            {/*  */}
+            <TodayCard />
+
+          </div>
+          {/* right side  */}
+          <div className="md:w-2/6 h-full p-4 md:pt-16 md:pr-6 mb-36 md:mb-0" >
+            <WeekCard />
+          </div>
+        </CityProvider>
+      </div>
     </div>
   )
 }

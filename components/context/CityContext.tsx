@@ -32,6 +32,8 @@ const CityProvider: FC<Props> = ({ children }: Props) => {
             setLocation({ latitude, longitude });
         })
     }
+
+    
 }, []);
 
   return (
