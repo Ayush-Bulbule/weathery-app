@@ -15,8 +15,8 @@ const Search = () => {
     setCityName("");
   }
   return (
-    <div className="flex mx:3 w-full items-center bg-gray-100 rounded-lg overflow-hidden px-2 py-1.5 justify-between">
-      <input value={city} onChange={(e)=>setCity(e.target.value)} className="text-base bg-gray-100 text-gray-500 flex-grow outline-none px-2 " type="text" placeholder="Search your city" />
+    <div className="flex mx:3 w-full items-center bg-gray-100 dark:bg-slate-900 rounded-lg overflow-hidden px-2 py-1.5 justify-between">
+      <input value={city} onChange={(e)=>setCity(e.target.value)} className="text-base bg-transparent flex-grow outline-none px-2 " type="text" placeholder="Search your city" />
       <div className="ms:flex items-center px-2 rounded-lg space-x-4 mx-auto ">
 
        {

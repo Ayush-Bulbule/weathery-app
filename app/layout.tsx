@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import ModeProvider from '../components/context/ModeProvider'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 
@@ -19,8 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <link rel="icon" href="./favicon.ico" />
+        <title>Weathery - A Weather info app</title>
       </Head>
+      <ModeProvider>
       <body className={inter.className}>{children}</body>
+
+      </ModeProvider>
     </html>
   )
 }

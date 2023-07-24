@@ -64,7 +64,7 @@ const TodayCard = () => {
         }
     }
     return (
-        <div className="flex flex-col bg-gray-100 md:p-8 p-4 w-full rounded-xl">
+        <div className="flex flex-col bg-gray-100 dark:bg-slate-900 md:p-8 p-4 w-full rounded-xl">
             <p className='font-semibold text-blue-700  uppercase text-xs pb-3'>Today's Forcast</p>
             <div className="flex flex-row flex-wrap md:flex-nowrap overflowx-scroll ">
                 {/* Time item */}

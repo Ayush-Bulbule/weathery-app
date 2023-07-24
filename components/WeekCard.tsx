@@ -66,11 +66,11 @@ const WeekCard = () => {
 
 
     return (
-        <div className="flex flex-col bg-gray-100 p-8 w-full rounded-xl min-h-full">
+        <div className="flex flex-col bg-gray-100 dark:bg-gray-900 p-8 w-full rounded-xl min-h-full">
             <p className='font-semibold text-blue-700 uppercase text-xs'>7 day Forcast</p>
 
             {/* Day Item */}
-            <div className="flex w-full justify-between py-4 items-center border-b-2 border-gray-200">
+            <div className="flex w-full justify-between py-4 items-center border-b-2 border-gray-200 dark:border-slate-800">
                 <p>Date</p>
                 <div className="flex items-center">
 
@@ -82,7 +82,7 @@ const WeekCard = () => {
 
             {
                 weather?.map((item, index) => (
-                    <div className="flex w-full justify-between py-2 items-center border-b-2 border-gray-200">
+                    <div className="flex w-full justify-between py-2 items-center border-b-2 border-gray-200 dark:border-slate-800">
                         <p>{item.dt_txt.slice(8, 10)}-{item.dt_txt.slice(5, 7)}</p>
                         <div className="flex items-center">
                             <img src={icons[index]} alt="sun" className="object-contain w-16 h-16" />

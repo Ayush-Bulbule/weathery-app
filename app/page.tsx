@@ -8,9 +8,10 @@ import WeekCard from '@/components/WeekCard'
 import { CityProvider } from '@/components/context/CityContext'
 import Image from 'next/image'
 
-export default function Home() {
+export default function Map() {
   return (
-    <div className="md:min-h-screen relative overflow-x-hidden flex box-border">
+    
+    <div className="md:min-h-screen relative overflow-x-hidden flex box-border dark:bg-slate-950">
       <Sidebar/>
       {/* Main */}
       <div className="w-full flex flex-col md:flex-row">
