@@ -53,7 +53,7 @@ const Sidebar = () => {
                     <li className={` `+(pathname=="/cities"?'text-orange-600':'text-gray-700 dark:text-gray-200')}>
                         <Link 
                             href="/cities"
-                            className="h-16 px-3 md:px-6 flex flex-col justify-center items-center w-full focus:text-orange-500 md:text-gray-800 dark:text-gray-200"
+                            className="h-16 px-3 md:px-6 flex flex-col justify-center items-center w-full focus:text-orange-500"
                         >
                             <FaListUl className="text-md md:text-2xl" />
                             <span className="text-xs mt-1.5 font-medium">Cities</span>

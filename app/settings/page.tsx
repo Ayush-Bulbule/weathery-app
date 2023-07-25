@@ -1,9 +1,33 @@
-import React from 'react'
+import CurrentCard from '@/components/CurrentCard'
+import DetailCard from '@/components/DetailCard'
+import Search from '@/components/Search'
+import Sidebar from '@/components/Sidebar'
+import TodayCard from '@/components/TodayCard'
+import WeekCard from '@/components/WeekCard'
 
-const Settings = () => {
+import { CityProvider } from '@/components/context/CityContext'
+import Image from 'next/image'
+
+export default function Home() {
   return (
-    <div>Settings</div>
+    <div className="md:min-h-screen relative overflow-x-hidden flex box-border">
+      <Sidebar/>
+      {/* Main */}
+      <div className="w-full flex flex-col md:flex-row">
+
+        <CityProvider>
+          <div className="md:w-4/6 w-full p-4">
+           <Search />
+          <div className="flex h-full items-center justify-center">
+              <h1 className="text-4xl">Settings Comming Soon..</h1>
+            </div>
+          </div>
+          {/* right side  */}
+          <div className="md:w-2/6 h-full p-4 md:pt-16 md:pr-6 mb-36 md:mb-0" >
+            <WeekCard />
+          </div>
+        </CityProvider>
+      </div>
+    </div>
   )
 }
-
-export default Settings

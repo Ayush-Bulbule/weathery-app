@@ -24,6 +24,8 @@ interface IWeather {
     }
 }
 
+
+
 const weatherConditions: Record<string, string> = {
     Clouds: "/cloud.png",
     Rain: "/rain.png",
@@ -39,19 +41,20 @@ const weatherConditions: Record<string, string> = {
 };
 
 
-const CurrentCard = () => {
+const CurrentCard:React.FC = () => {
     const [weather, setWeather] = useState<IWeather | null>(null);
     const [time, setTime] = useState({ hour: '00', min: '00', sec: '00' });
     const [icon, setIcon] = useState<string>('')
 
     //City Context
-    const { cityName, location } = useContext(CityContext);
+    const { cityName,setCityName, location } = useContext(CityContext);
 
     //If location then create request
     useEffect(() => {
         if (location.latitude && location.longitude) {
             getWeather(location.latitude, location.longitude);
         }
+    
     }, [location, cityName]);
 
     //Get time
@@ -104,7 +107,7 @@ const CurrentCard = () => {
                 </div>
                 <div className="img w-1/2 flex flex-col justify-center items-center">
 
-                    <img src={weather ? icon : "/icon-loading.gif"} alt="weather" className="img-weather w-52" />
+                    <img src={weather ? icon : "/preload.png"} alt="weather" className="img-weather w-52" />
 
                     <h3 className="text-cl font-bold text-center"></h3>
                 </div>

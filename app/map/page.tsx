@@ -17,11 +17,10 @@ export default function Home() {
 
         <CityProvider>
           <div className="md:w-4/6 w-full p-4">
-            <Search />
-            <CurrentCard />
-            {/*  */}
-            <TodayCard />
-
+           <Search />
+          <div className="flex h-full items-center justify-center">
+              <h1 className="text-4xl">Maps Comming Soon..</h1>
+            </div>
           </div>
           {/* right side  */}
           <div className="md:w-2/6 h-full p-4 md:pt-16 md:pr-6 mb-36 md:mb-0" >
