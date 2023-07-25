@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext,useEffect } from 'react'
 import { CityContext } from './context/CityContext';
 import { FaCross, FaSearch } from 'react-icons/fa';
 import { FaXmark } from 'react-icons/fa6';
@@ -15,6 +15,13 @@ const Search = () => {
       setCityName(city);
     }
   }
+
+  useEffect(() => {
+    setCity(cityName);
+  
+    
+  }, [cityName])
+  
   
   return (
     <div className="flex mx:3 w-full items-center bg-gray-100 dark:bg-slate-900 rounded-lg overflow-hidden px-2 py-1.5 justify-between">

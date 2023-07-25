@@ -4,15 +4,6 @@ import { CityContext } from './context/CityContext';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
-interface IWeather {
-    main: {
-        temp: number;
-    }
-    weather: [{
-        main: string;
-    }]
-    dt_txt: string;
-}
 
 
 const weatherConditions: Record<string, string> = {
