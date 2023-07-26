@@ -8,7 +8,6 @@ interface Props {
 }
 
 const CityCard: React.FC<Props> = ({ city }) => {
-    const [selected, setSelected] = useState(false);
     const [weather, setWeather] = useState<IWeather | null>(null);
     const { cityName, setCityName } = useContext(CityContext);
     const [time, setTime] = useState<string>('');
@@ -40,7 +39,7 @@ const CityCard: React.FC<Props> = ({ city }) => {
     return (
         <div onClick={handleSelect} className={`w-full border-2  rounded-2xl p-2 md:p-4 px-8 my-1.5 md:my-3 flex items-center cursor-pointer justify-between ` + (city == cityName ? "border-blue-400" : "bg-gray-100 dark:bg-slate-900 border-none")}>
             <div className="flex items-center justify-start">
-                <img src="/sun.png" alt="weather" className="object-cover mx-3 md:mx-8 md:max-w-24 md:max-h-24 max-w-16 max-h-16" />
+                <img src={weather ? `/${weather.weather[0].icon}.png` : "/preload.png"} alt="weather" className="object-cover my-1.5 mx-3 md:mx-8 md:max-w-24 md:max-h-24 max-w-16 max-h-16" />
                 <div className="flex flex-col">
                     <h1 className='text-md md:text-2xl py-1 font-semibold capitalize'>{city}</h1>
                     <p className='text-xs md:text-sm'>{time}</p>

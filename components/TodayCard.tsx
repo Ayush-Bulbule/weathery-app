@@ -4,24 +4,10 @@ import { CityContext } from './context/CityContext';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
-
-
-const weatherConditions: Record<string, string> = {
-    Clouds: "/cloud.png",
-    Rain: "/rain.png",
-    Clear: "/sun.png",
-    Snow: "/sun-snow.png",
-    Thunderstorm: "/sun-thunder.png",
-    Drizzle: "/sun-rain.png",
-    Mist: "/sun-rain.png",
-    Smoke: "/sun-rain.png",
-    Haze: "/sun-rain.png",
-    Dust: "/sun-rain.png",
-    Fog: "/sun-rain.png",
-};
+import IForecast from '@/types/IForecast';
 
 const TodayCard = () => {
-    const [weather, setWeather] = useState<IWeather[]>();
+    const [weather, setWeather] = useState<IForecast[]>();
     const { cityName, location } = useContext(CityContext);
     const [icons, setIcons] = useState<string[]>([]);
 
@@ -40,19 +26,13 @@ const TodayCard = () => {
         const response = await fetch(url)
         const data = await response.json();
 
-        let datalist: IWeather[] = data.list;
+        let datalist: IForecast[] = data.list;
 
         datalist = datalist.slice(0, 6);
 
         setWeather(datalist);
 
-        if (datalist) {
-            datalist.forEach(item => {
-                setIcons((prev) => [...prev, weatherConditions[item.weather[0].main]]);
-                console.log(weatherConditions[item.weather[0].main]);
-            });
-
-        }
+  
     }
     return (
         <div className="flex flex-col bg-gray-100 dark:bg-slate-900 md:p-8 p-4 w-full rounded-xl">
@@ -65,7 +45,7 @@ const TodayCard = () => {
                         return (
                             <div key={index} className="w-1/2  flex flex-col justify-center items-center mt-4 md:border-r border-gray-400">
                                 <p className="text-xs">{data.dt_txt.slice(11, 16)}</p>
-                                <img src={icons[index] ? icons[index] : 'sun.png'} className='object-contain' alt="sun" style={{ width: 50 + "px", height: 50 + "px" }} />
+                                <img src={weather ? `/${data.weather[0].icon}.png` : "/preload.png"} className='object-contain my-1.5' alt="sun" style={{ width: 50 + "px", height: 50 + "px" }} />
                                 <p className="text-md font-bold">{data.main.temp}°C</p>
                             </div>
                         )

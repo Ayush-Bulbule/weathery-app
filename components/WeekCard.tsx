@@ -1,36 +1,13 @@
 'use client';
 import React, { useState, useContext, useEffect } from 'react'
 import { CityContext } from './context/CityContext';
-interface IWeather {
-    main: {
-        temp: number;
-        temp_min: number;
-        temp_max: number;
-    }
-    weather: [{
-        main: string;
-    }]
-    dt_txt: string;
-}
+import IForecast from '@/types/IForecast';
 
-const weatherConditions: Record<string, string> = {
-    Clouds: "/cloud.png",
-    Rain: "/rain.png",
-    Clear: "/sun.png",
-    Snow: "/sun-snow.png",
-    Thunderstorm: "/sun-thunder.png",
-    Drizzle: "/sun-rain.png",
-    Mist: "/sun-rain.png",
-    Smoke: "/sun-rain.png",
-    Haze: "/sun-rain.png",
-    Dust: "/sun-rain.png",
-    Fog: "/sun-rain.png",
-};
 
 const WeekCard = () => {
     //City Context
     const { cityName, location } = useContext(CityContext);
-    const [weather, setWeather] = useState<IWeather[]>();
+    const [weather, setWeather] = useState<IForecast[]>();
     const [icons, setIcons] = useState<string[]>([])
 
     useEffect(() => {
@@ -55,10 +32,7 @@ const WeekCard = () => {
 
         setWeather(filteredData);
         if (filteredData) {
-            filteredData.forEach(item => {
-                setIcons((prev) => [...prev, weatherConditions[item.weather[0].main]]);
-                console.log(weatherConditions[item.weather[0].main]);
-            });
+          
             console.log(icons);
         }
 
@@ -82,10 +56,10 @@ const WeekCard = () => {
 
             {
                 weather?.map((item, index) => (
-                    <div className="flex w-full justify-between py-2 items-center border-b-2 border-gray-200 dark:border-slate-800">
+                    <div className="flex w-full justify-between py-2 items-center border-b-2 border-gray-200 dark:border-slate-950">
                         <p>{item.dt_txt.slice(8, 10)}-{item.dt_txt.slice(5, 7)}</p>
                         <div className="flex items-center">
-                            <img src={icons[index]} alt="sun" className="object-contain w-16 h-16" />
+                            <img src={item ? `/${item.weather[0].icon}.png` : "/preload.png"} alt="sun" className="object-contain w-14 h-14 my-1 " />
                             <p className='mx-2'>{item.weather[0].main}</p>
 
                         </div>

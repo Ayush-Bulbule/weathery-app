@@ -1,5 +1,4 @@
 'use client';
-import { log } from 'console';
 import React, { useState, useEffect, useContext } from 'react'
 import { CityContext } from './context/CityContext';
 import Skeleton from 'react-loading-skeleton';
@@ -9,36 +8,19 @@ import DetailCard from './DetailCard';
 import IWeather from '@/types/IWeather';
 
 
-
-const weatherConditions: Record<string, string> = {
-    Clouds: "/cloud.png",
-    Rain: "/rain.png",
-    Clear: "/sun.png",
-    Snow: "/sun-snow.png",
-    Thunderstorm: "/sun-thunder.png",
-    Drizzle: "/sun-rain.png",
-    Mist: "/sun-rain.png",
-    Smoke: "/sun-rain.png",
-    Haze: "/sun-rain.png",
-    Dust: "/sun-rain.png",
-    Fog: "/sun-rain.png",
-};
-
-
-const CurrentCard:React.FC = () => {
+const CurrentCard: React.FC = () => {
     const [weather, setWeather] = useState<IWeather | null>(null);
     const [time, setTime] = useState({ hour: '00', min: '00', sec: '00' });
-    const [icon, setIcon] = useState<string>('')
 
     //City Context
-    const { cityName,setCityName, location } = useContext(CityContext);
+    const { cityName, setCityName, location } = useContext(CityContext);
 
     //If location then create request
     useEffect(() => {
         if (location.latitude && location.longitude) {
             getWeather(location.latitude, location.longitude);
         }
-    
+
     }, [location, cityName]);
 
     //Get time
@@ -60,21 +42,23 @@ const CurrentCard:React.FC = () => {
     //functiont to get weather
     const getWeather = async (latitude: number, longitude: number) => {
 
-        //Link
-        const url = (cityName == '') ? `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}` :
-            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`;
-
-        console.log(url);
-
-        const response = await fetch(url)
-        const data = await response.json();
-
-
-        //finally set thedata
-        setWeather(data);
-
-        //set icon
-        setIcon(weatherConditions[data.weather[0].main])
+        try {
+            const url = (cityName == '') ? `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}` :
+                `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`;
+            console.log(url);
+        
+            const res = await fetch(url);
+            if(res.status == 404 || !res.ok){
+                throw new Error('City not found');
+            }
+            const data = await res.json();
+            setWeather(data);
+        }catch ( error ) {
+            console.log(error);
+            alert("City not found");
+            setCityName('');
+        }
+       
     }
     return (
         <>
@@ -91,13 +75,13 @@ const CurrentCard:React.FC = () => {
                 </div>
                 <div className="img w-1/2 flex flex-col justify-center items-center">
 
-                    <img src={weather ? icon : "/preload.png"} alt="weather" className="img-weather w-52" />
+                    <img src={weather ? `/${weather.weather[0].icon}.png` : "/preload.png"} alt="weather" className="img-weather w-52" />
 
                     <h3 className="text-cl font-bold text-center"></h3>
                 </div>
             </div>
 
-           {weather? <DetailCard feel={weather.main.feels_like} humidity={weather.main.humidity} pressure={weather.main.pressure} speed={weather.wind.speed}/>:""}
+            {weather ? <DetailCard feel={weather.main.feels_like} humidity={weather.main.humidity} pressure={weather.main.pressure} speed={weather.wind.speed} /> : ""}
 
 
         </>
