@@ -11,19 +11,6 @@ interface DetailCardProps {
     speed: number;
     humidity: number;
   }
-const weatherConditions: Record<string, string> = {
-    Clouds: "/cloud.png",
-    Rain: "/rain.png",
-    Clear: "/sun.png",
-    Snow: "/sun-snow.png",
-    Thunderstorm: "/sun-thunder.png",
-    Drizzle: "/sun-rain.png",
-    Mist: "/sun-rain.png",
-    Smoke: "/sun-rain.png",
-    Haze: "/sun-rain.png",
-    Dust: "/sun-rain.png",
-    Fog: "/sun-rain.png",
-};
 
 const DetailCard:React.FC<DetailCardProps> = ({ feel,pressure,speed,humidity}) => {
 
@@ -31,7 +18,7 @@ const DetailCard:React.FC<DetailCardProps> = ({ feel,pressure,speed,humidity}) =
 
     return (
         <div className=" flex flex-col mb-4 bg-gray-100 dark:bg-slate-900 md:p-8 p-4 md:w-full mt-4 rounded-xl">
-            <p className='font-semibold text-gray-600 uppercase text-xs pb-3'>Air Conditions</p>
+            <p className='font-semibold text-blue-500 uppercase text-xs pb-3'>Air Conditions</p>
 
             <div className="flex justify-between ">
                 <div className="mt-2 flex flex-col md:flex-row items-center md:items-start">
