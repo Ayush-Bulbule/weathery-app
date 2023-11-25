@@ -14,7 +14,6 @@
 - Search cities weather.
 - Most searched city.
 - Dark and Light Mode
-  
 
 ### 3. Tech Stack
 
@@ -35,9 +34,10 @@ Tech Stack used to develop sharelink:
 ![screen_4](https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/2ade3bc9-16d5-40e2-9b56-2e4e4f0aedf0)
 
 ### Mobile Responsive
-![weathery-app-portrait](https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/b6b15012-0135-426a-9321-cb91a0817a9d)
+<div style="display:flex;">
+  <img src="https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/4626f716-3520-4b7e-906a-d1553080a386" alt="Mobile Screen 1" width="400"/>
+  <img src="https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/c2826c53-83f4-45e7-809d-b9b5007cf351" alt="Mobile Screen 2" width="400"/>
+</div>
 
-
-### Mobile Responsive
 
 
