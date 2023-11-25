@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weathery: Get weather insights!
 
-## Getting Started
+### 1. Introduction
 
-First, run the development server:
+**Weathery** is a Next.js app for geting the weather insights. This app comes with eye catching yet simple and mobile friendly ui.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### 2. Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Get weathery info of your current location.
+- 7 day Forecast
+- Today's Weathery
+- Air Conditions 
+- Get weather info by city.
+- Search cities weather.
+- Most searched city.
+- Dark and Light Mode
+  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Tech Stack used to develop sharelink:
+![Next js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-## Learn More
+## Screenshots
+### Home Page
+![screen_1](https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/2fdb0acf-e780-4db4-817c-7a7ee9ac57e4)
+#### Dark Mode:
+![screen_2](https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/5686d2e9-51b8-4848-b4b3-d553ca8f8353)
 
-To learn more about Next.js, take a look at the following resources:
+### Cities Page
+![screen_3](https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/86fb2035-9b61-4b68-85e0-0c94e08a8492)
+#### Dark Mode:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![screen_4](https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/2ade3bc9-16d5-40e2-9b56-2e4e4f0aedf0)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Mobile Responsive
+![weathery-app-portrait](https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/b6b15012-0135-426a-9321-cb91a0817a9d)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Mobile Responsive
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
