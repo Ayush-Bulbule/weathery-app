@@ -1,14 +1,14 @@
 'use client'
-import React,{FC,ReactNode} from 'react'
-import {ThemeProvider} from 'next-themes';
+import React, { FC, ReactNode } from 'react'
+import { ThemeProvider } from 'next-themes';
 
 interface Props {
-    children?:ReactNode;
+  children?: ReactNode;
 }
-const ModeProvider:FC<Props> = ({children}) => {
+const ModeProvider: FC<Props> = ({ children }) => {
   return (
     <ThemeProvider attribute="class">
-        {children}
+      {children}
     </ThemeProvider>
   )
 }
