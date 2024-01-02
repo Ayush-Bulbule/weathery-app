@@ -6,7 +6,7 @@ interface IForecast {
     }
     weather: [{
         main: string;
-        icon:string;
+        icon: string;
     }]
     dt_txt: string;
 }
