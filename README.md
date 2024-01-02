@@ -25,6 +25,7 @@ Tech Stack used to develop sharelink:
 
 ### Home Page
 
+
 ![screen_1](https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/2fdb0acf-e780-4db4-817c-7a7ee9ac57e4)
 
 #### Dark Mode
@@ -38,6 +39,9 @@ Tech Stack used to develop sharelink:
 #### Dark Mode
 
 ![screen_4](https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/2ade3bc9-16d5-40e2-9b56-2e4e4f0aedf0)
+
+#### Intigrated Maps
+![screen-5](https://github.com/Ayush-Bulbule/weathery-app/assets/69710917/ddcd4fe1-e019-4d98-83ec-298dc4587707)
 
 ### Mobile Responsive
 
